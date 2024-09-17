@@ -11,7 +11,14 @@ export default class PokemonCard extends React.Component {
 	}
 
 	async componentDidMount(){
+        let randomNumber =Math.ceil(Math.random() * 1025);
+        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`);
+		let data = await response.json();
 
+        this.setState({
+            pokemonName: data.name,
+            pokemonImage: data.sprites.front_default
+        });
 	}
 
 	render(){

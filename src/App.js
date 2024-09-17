@@ -61,7 +61,7 @@ class App extends React.Component {
           // the actual part that does the loop or repeated action
           .map((element, index) => {
             // repeated action is in this block!
-            return <PokemonCard />
+            return <PokemonCard key={index} />
           })
         }
 
